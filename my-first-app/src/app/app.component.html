@@ -1,0 +1,66 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <form [formGroup]="formGroup" novalidate>
+ <div class="form-group"   ngClass="{
+  'has-error': !form.get('firstName').valid && form.get('firstName').touched,
+  'has-feedback': !form.get('firstName').valid && form.get('firstName').touched}">
+   <label> First Name : </label>
+   <input type="text"  formControlName="firstName" class="form-control"/>  
+
+   <!-- <app-field-error-display [displayError] ="isFieldValid('firstName')" errorMsg="please enter your name"></app-field-error-display> -->
+   <div *ngIf="formGroup.controls['firstName'].invalid && (formGroup.controls['firstName'].dirty || formGroup.controls['firstName'].touched)" class="alert alert-danger">
+      <div *ngIf="formGroup.controls['firstName'].errors.required">
+      Name is required.
+    </div>
+  </div> <br/><br/>
+
+   <label>LastName : </label>
+   <input type="text"  formControlName="lastName" />
+
+   <div *ngIf="formGroup.controls['lastName'].invalid && (formGroup.controls['lastName'].dirty || formGroup.controls['lastName'].touched)" class="alert alert-danger">
+      <div *ngIf="formGroup.controls['lastName'].errors.required">
+      lastName is required.
+    </div>
+    </div>
+
+   <!-- <app-field-error-display [displayError] ="isFieldValid('lastName')" errorMsg="please enter your name"></app-field-error-display> -->
+ </div><br/>
+ <div>
+   <label>Email Id :</label>
+   <input type="email" formControlName="email" />
+   <div *ngIf="formGroup.controls['email'].invalid && (formGroup.controls['email'].dirty || formGroup.controls['email'].touched)" class="alert alert-danger">
+      <div *ngIf="formGroup.controls['email'].errors.required">
+      email is required.
+    </div>
+    </div><br/>
+   <!-- <app-field-error-display [displayError] ="isFieldValid('email')" errorMsg="please enter your name"></app-field-error-display> -->
+ </div><br/>
+ <div>
+   <label>Phone No. :</label>
+   <input type="phone number" formControlName="phoneNo" />
+
+   <div *ngIf="formGroup.controls['phoneNo'].invalid && (formGroup.controls['phoneNo'].dirty || formGroup.controls['phoneNo'].touched)" class="alert alert-danger">
+      <div *ngIf="formGroup.controls['phoneNo'].errors.required">
+      PhoneNo is required.
+    </div>
+    </div>
+
+   
+   <!-- <app-field-error-display [displayError] ="isFieldValid('phoneNo')" errorMsg="please enter your name"></app-field-error-display> -->
+ </div><br/>
+ <div>
+   <button type="submit" (click)="onSubmitClick()">
+     SUBMIT
+   </button>
+ </div>
+ </form>
+
+
+
+</div>
+<!-- 
+<router-outlet></router-outlet> -->
