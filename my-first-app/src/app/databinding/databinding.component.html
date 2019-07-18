@@ -1,11 +1,21 @@
 <p>databinding works!</p>
 <div>
         <p>Server with ID {{serverId}} is {{serverStatus}}. </p>  
-
-
         <!-- <input [value] = 'data1' ngModel="Relationship"(input) ='data1 =$event.target.value'/> -->
         <!-- <span>Entered value is : {{data1}}</span> -->
 
-     
+        <form [formGroup]="orderForm">
+                        <h1>Form Array</h1>
+         <div formArrayName="items" *ngFor = "let item of orderForm.get('items').controls; let i = index;">
+                  
+              <div [formGroupName] ="i">
+                      <input formControlName="name" placeholder="item name" /> <br/> <br/>
+                      <input formControlName="desc" placeholder="description" /> <br/> <br/>
+                      <input formControlName="price" placeholder="price" />
+              </div>
+              Chosen Name: {{orderForm.controls.items.controls[i].controls.name.value}}
+              Chosen Desc: {{orderForm.controls.items.controls[i].controls.desc.value}}
+              Chosen Price: {{orderForm.controls.items.controls[i].controls.price.value}}
+         </div>
+        </form>
 </div>
-

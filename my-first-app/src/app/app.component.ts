@@ -8,6 +8,7 @@ import { stringify } from 'querystring';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  color ='pink';
 
   title = 'my-first-app';
   formGroup: FormGroup;

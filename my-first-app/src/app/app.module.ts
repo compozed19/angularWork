@@ -7,18 +7,22 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { HightlightDirective } from './hightlight.directive';
+//feature module
+
+import {CustomerDashboardModule} from './customer-dashboard/customer-dashboard/customer-dashboard.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     DatabindingComponent,
-    HightlightDirective
+    HightlightDirective,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,  // configure app for browser which needs to done only once
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CustomerDashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

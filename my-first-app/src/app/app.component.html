@@ -1,8 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
+
 <div style="text-align:center">
+  <p hightlight>Highlight me!</p>
   <h1>
-    Welcome to {{ title }}!
+   <p hightlight [hightlightColor]="orange">Welcome to {{ title }}!</p> 
   </h1>
   <form [formGroup]="formGroup" novalidate>
  <div class="form-group"   ngClass="{
@@ -61,8 +63,11 @@
 
  <div>
    <app-product></app-product>
-   <app-databinding></app-databinding>
+   <app-databinding></app-databinding> <br/><br/>
+   <button routerLink="/customer-dashboard">Route to customer-dashboard</button>
+   <button routerLink="">Home</button>
  </div>
 </div>
-<!-- 
-<router-outlet></router-outlet> -->
+  <router-outlet></router-outlet>
+
+

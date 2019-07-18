@@ -10,7 +10,6 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
   title = "Product Component"
   formGroup : FormGroup
   array =[{
@@ -20,7 +19,8 @@ export class ProductComponent implements OnInit {
    arrayItems:{
      name: string,
      desc : string,
-     price:number
+     price:number,
+     id:number
    }[];
    demoArray =[]
   constructor(private formBuilder : FormBuilder) {
@@ -35,7 +35,8 @@ export class ProductComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       productName : new FormControl(''),
       productDesc: new FormControl(''),
-      productPrice: new FormControl('')
+      productPrice: new FormControl(''),
+      productId : new FormControl('')
     })
   }
 
@@ -43,7 +44,9 @@ export class ProductComponent implements OnInit {
     this.productDetails = [{
       'productName' : this.formGroup.value.productName,
       'productDesc' : this.formGroup.value.productDesc,
-      'productPrice' : this.formGroup.value.productPrice
+      'productPrice' : this.formGroup.value.productPrice,
+      'productId' : this.formGroup.value.productId,
+
     }]
 
     console.log("product Details are---",this.productDetails);
