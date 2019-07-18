@@ -9,7 +9,7 @@
   'has-error': !form.get('firstName').valid && form.get('firstName').touched,
   'has-feedback': !form.get('firstName').valid && form.get('firstName').touched}">
    <label> First Name : </label>
-   <input type="text"  formControlName="firstName" class="form-control"/>  
+   <input type="text" ngModel="Enter name" formControlName="firstName" class="form-control"/>  
 
    <!-- <app-field-error-display [displayError] ="isFieldValid('firstName')" errorMsg="please enter your name"></app-field-error-display> -->
    <div *ngIf="formGroup.controls['firstName'].invalid && (formGroup.controls['firstName'].dirty || formGroup.controls['firstName'].touched)" class="alert alert-danger">
@@ -59,8 +59,10 @@
  </div>
  </form>
 
-
-
+ <div>
+   <app-product></app-product>
+   <app-databinding></app-databinding>
+ </div>
 </div>
 <!-- 
 <router-outlet></router-outlet> -->
