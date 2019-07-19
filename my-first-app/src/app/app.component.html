@@ -1,10 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
+ 
 
 <div style="text-align:center">
   <p hightlight>Highlight me!</p>
   <h1>
-   <p hightlight [hightlightColor]="orange">Welcome to {{ title }}!</p> 
+   <p hightlight [hightlightColor]="orange">Welcome to {{ title | uppercase}}!</p>
+   <p>Parameterized Pipe {{birthday |date:'MM//dd/yy'}}</p>
+   <p>Custom Pipe {{"MADAM" | reverseStr}} </p>
   </h1>
   <form [formGroup]="formGroup" novalidate>
  <div class="form-group"   ngClass="{
@@ -51,13 +53,20 @@
     </div>
     </div>
 
-   
    <!-- <app-field-error-display [displayError] ="isFieldValid('phoneNo')" errorMsg="please enter your name"></app-field-error-display> -->
  </div><br/>
  <div>
    <button type="submit" (click)="onSubmitClick()">
      SUBMIT
    </button>
+     <h1>Observable data </h1>
+   <ul *ngFor="let student of studentData">
+    <li>Id :<span>{{student.id}}</span></li>
+    <li>Name : <span>{{student.name}}</span></li>
+     <li>College : <span>{{student.college}}</span></li>
+
+   </ul>
+
  </div>
  </form>
 
