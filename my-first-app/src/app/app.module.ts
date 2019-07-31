@@ -13,6 +13,8 @@ import {AppService} from './app.service';
 import {CustomerDashboardModule} from './customer-dashboard/customer-dashboard/customer-dashboard.module';
 import { ReverseStrPipe } from './reverse-str.pipe';
 
+import { FormsModule }   from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { ReverseStrPipe } from './reverse-str.pipe';
     AppRoutingModule,
     ReactiveFormsModule,
     CustomerDashboardModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
